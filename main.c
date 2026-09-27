@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <string.h>
-#include <ctype.h>
 
 // Verifica se a palavra possui somente letras
 int palavraValida(char palavra[]) {
@@ -270,9 +269,9 @@ int main() {
 
     if (arquivo == NULL) {
 
-        printf("\nErro ao criar o arquivo.\n");
+        printf("\nAviso: nao foi possivel criar o arquivo de resultado.\n");
 
-        return 1;
+        return 0;
     }
 
 
