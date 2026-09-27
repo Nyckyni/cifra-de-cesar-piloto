@@ -106,6 +106,7 @@ long long calcularSequencia(int tipo, int posicao, int inicio, int razao) {
 int main() {
 
     char palavra[16];
+    char entrada[256];
     char criptografada[16];
 
     int shift;
@@ -120,16 +121,21 @@ int main() {
 
     // Entrada da palavra
     printf("Digite a palavra secreta: ");
-    scanf("%15s", palavra);
 
-    // Verificação da palavra
-    if (strlen(palavra) > 15) {
+    if (scanf("%255s", entrada) != 1) {
+        return 1;
+    }
+
+    if (strlen(entrada) > 15) {
 
         printf("\nErro: a palavra deve ter no maximo 15 letras.\n");
 
         return 1;
     }
 
+    strcpy(palavra, entrada);
+
+    // Verificação da palavra
     if (!palavraValida(palavra)) {
 
         printf("\nErro: use somente letras minusculas, sem acentos.\n");
@@ -203,7 +209,7 @@ int main() {
         int posicao = palavra[i] - 'a';
 
         // Aplica o deslocamento
-        posicao = (posicao + deslocamento) % 26;
+        posicao = (int)(((posicao + deslocamento) % 26 + 26) % 26);
 
         // Converte novamente para letra
         criptografada[i] = posicao + 'a';
