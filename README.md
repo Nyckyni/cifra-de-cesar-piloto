@@ -1,2 +1,15 @@
 # cifra-de-cesar-piloto
-codificação de cifra de ceasar 
+
+Codificação de cifra de César com SHIFT e sequência numérica (PA, PG, Fibonacci ou números primos).
+
+## Compilação
+
+```bash
+gcc -std=c11 -Wall -Wextra -pedantic -o cifra main.c
+```
+
+## Execução
+
+```bash
+./cifra
+```
