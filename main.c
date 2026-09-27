@@ -113,6 +113,7 @@ int main() {
 
     int inicio = 1;
     int razao = 1;
+    FILE *arquivo;
 
     printf("=====================================\n");
     printf("       SISTEMA DE CRIPTOGRAFIA\n");
@@ -222,6 +223,16 @@ int main() {
         }
     }
 
+    // Criação do arquivo
+    arquivo = fopen("resultado_criptografia.txt", "w");
+
+    if (arquivo == NULL) {
+
+        printf("\nErro ao criar o arquivo.\n");
+
+        return 1;
+    }
+
 
     // Criptografia
     size_t tamanhoPalavra = strlen(palavra);
@@ -259,20 +270,6 @@ int main() {
     printf("Palavra original: %s\n", palavra);
     printf("SHIFT: %d\n", shift);
     printf("Palavra criptografada: %s\n", criptografada);
-
-
-    // Criação do arquivo
-    FILE *arquivo;
-
-    arquivo = fopen("resultado_criptografia.txt", "w");
-
-
-    if (arquivo == NULL) {
-
-        printf("\nAviso: nao foi possivel criar o arquivo de resultado.\n");
-
-        return 0;
-    }
 
 
     // Grava informações no arquivo
