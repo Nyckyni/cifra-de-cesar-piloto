@@ -146,7 +146,13 @@ int main() {
 
     // Entrada do SHIFT
     printf("Digite o valor do SHIFT: ");
-    scanf("%d", &shift);
+
+    if (scanf("%d", &shift) != 1) {
+
+        printf("\nErro: entrada numerica invalida.\n");
+
+        return 1;
+    }
 
 
     // Escolha da sequência
@@ -158,7 +164,13 @@ int main() {
     printf("4 - Numeros Primos\n");
 
     printf("\nDigite sua escolha: ");
-    scanf("%d", &tipo);
+
+    if (scanf("%d", &tipo) != 1) {
+
+        printf("\nErro: entrada numerica invalida.\n");
+
+        return 1;
+    }
 
 
     // Verifica escolha
@@ -174,10 +186,20 @@ int main() {
     if (tipo == 1) {
 
         printf("\nDigite o primeiro termo da PA: ");
-        scanf("%d", &inicio);
+        if (scanf("%d", &inicio) != 1) {
+
+            printf("\nErro: entrada numerica invalida.\n");
+
+            return 1;
+        }
 
         printf("Digite a razao da PA: ");
-        scanf("%d", &razao);
+        if (scanf("%d", &razao) != 1) {
+
+            printf("\nErro: entrada numerica invalida.\n");
+
+            return 1;
+        }
     }
 
 
@@ -185,10 +207,20 @@ int main() {
     if (tipo == 2) {
 
         printf("\nDigite o primeiro termo da PG: ");
-        scanf("%d", &inicio);
+        if (scanf("%d", &inicio) != 1) {
+
+            printf("\nErro: entrada numerica invalida.\n");
+
+            return 1;
+        }
 
         printf("Digite a razao da PG: ");
-        scanf("%d", &razao);
+        if (scanf("%d", &razao) != 1) {
+
+            printf("\nErro: entrada numerica invalida.\n");
+
+            return 1;
+        }
     }
 
 
